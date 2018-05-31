@@ -12,7 +12,8 @@ var phraseArray = createPhrase(phraseString)
 
 var appState = {
   char: phraseArray,
-  currentCharacter: 0
+  currentCharacter: 0,
+  failures: 0
 }
 
 function renderCharacter (phrase) {
