@@ -3,7 +3,7 @@ var phraseString = 'grumpy wizards make toxic brew for the evil queen and jack'
 function createPhrase(string) {
   phrase = []
   for (var i = 0; i < string.length; i++) {
-    phrase.push({char: string.charAt(i)})
+    phrase.push({char: string.charAt(i), index: i})
   }
   return phrase
 }
@@ -24,5 +24,6 @@ function renderAll(phrase) {
 renderAll(phraseArray)
 
 var appState = {
-  char: phrase
+  char: phraseArray,
+  currentCharacter: 0
 }
