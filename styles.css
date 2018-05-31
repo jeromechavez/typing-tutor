@@ -3,6 +3,7 @@
 }
 
 body {
+  display: inline;
   background-color: black;
   color: rgb(47, 199, 39);
   font-family: 'Audiowide', cursive;
