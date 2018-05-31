@@ -22,3 +22,7 @@ function renderAll(phrase) {
   })
 }
 renderAll(phraseArray)
+
+var appState = {
+  char: phrase
+}
