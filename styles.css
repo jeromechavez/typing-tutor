@@ -19,6 +19,10 @@ body {
   font-size: 30px;
 }
 
+.current-character {
+  background-color: gray;
+}
+
 /*
 Reference to my Google Fonts that are linked:
 font-family: 'Rajdhani', sans-serif;
