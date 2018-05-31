@@ -10,9 +10,17 @@ function createPhrase(string) {
 
 var phraseArray = createPhrase(phraseString)
 
+var appState = {
+  char: phraseArray,
+  currentCharacter: 0
+}
+
 function renderCharacter (phrase) {
   $phraseElement = document.createElement('span')
   $phraseElement.textContent = phrase.char
+  if (phrase.index === appState.currentCharacter) {
+    $phraseElement.classList.add('current-character')
+  }
   return $phraseElement
 }
 
@@ -22,8 +30,3 @@ function renderAll(phrase) {
   })
 }
 renderAll(phraseArray)
-
-var appState = {
-  char: phraseArray,
-  currentCharacter: 0
-}

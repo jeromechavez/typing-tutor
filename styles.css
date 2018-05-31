@@ -5,7 +5,7 @@
 h1 {
   font-size: 75px;
   color: red;
-  font-family: 'Allerta Stencil', sans-serif;
+  font-family: 'Audiowide', sans-serif;
   border: solid 5px red;
   padding: 20px;
   margin: 10% 25%;
@@ -15,7 +15,7 @@ body {
   display: inline;
   background-color: black;
   color: rgb(47, 199, 39);
-  font-family: 'Audiowide', cursive;
+  font-family: 'Allerta Stencil', cursive;
   font-size: 30px;
 }
 
