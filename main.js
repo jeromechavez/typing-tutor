@@ -52,6 +52,14 @@ function calculateScore(phrase) {
   return (phrase.length / totalCount) * 100
 }
 
+function renderScore (phrase) {
+  var $scoreDiv = document.createElement('div')
+  $scoreDiv.classList.add('score')
+  var score = calculateScore(phrase)
+  $scoreDiv.textContent = 'Game Over! You have a ' + Math.round(score) + '% accuracy in typing!'
+  document.body.appendChild($scoreDiv)
+}
+
 renderAll(phraseArray)
 
 document.body.addEventListener('keydown', (event) => {

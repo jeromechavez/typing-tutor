@@ -1,5 +1,6 @@
 * {
   text-align: center;
+  background-color: black;
 }
 
 h1 {
@@ -11,7 +12,7 @@ h1 {
   margin: 10% 25%;
 }
 
-body {
+span {
   display: inline;
   background-color: black;
   color: rgb(47, 199, 39);
@@ -25,6 +26,13 @@ body {
 
 .failed {
   border: dotted 2px red;
+}
+
+.score {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 75px;
+  color: gold;
+  margin-top: 20%;
 }
 
 /*
