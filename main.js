@@ -30,4 +30,5 @@ function renderAll(phrase) {
     document.body.appendChild(renderCharacter(object))
   })
 }
-renderAll(phraseArray)
+
+window.addEventListener('keydown', renderAll(phraseArray))
