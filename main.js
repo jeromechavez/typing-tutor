@@ -13,15 +13,23 @@ var phraseArray = createPhrase(phraseString)
 var appState = {
   char: phraseArray,
   currentCharacter: phraseArray[0].char,
-  currentIndex: 0
+  currentIndex: 0,
+  pressedKey: null
 }
 
 function renderCharacter (phrase) {
   $phraseElement = document.createElement('span')
   $phraseElement.textContent = phrase.char
-  if (phrase.index === appState.currentIndex) {
-    $phraseElement.classList.add('current-character')
+
+  if (appState.currentIndex === phrase.index) {
+    $phraseElement.classList.toggle('current-character')
+    if (appState.pressedKey !== phrase.char && appState.pressedKey !== null) {
+      $phraseElement.classList.toggle('failed')
+      phrase.failures++
+    }
   }
+
+
   return $phraseElement
 }
 
@@ -41,9 +49,10 @@ document.body.addEventListener('keydown', (event) => {
   if (event.key === appState.currentCharacter) {
     appState.currentIndex++
     appState.currentCharacter = phraseArray[appState.currentIndex].char
+    appState.pressedKey = null
   }
   else {
-    phraseArray[appState.currentIndex].failures++
+    appState.pressedKey = event.key
   }
 
   var $update = document.querySelector('.phrase')
