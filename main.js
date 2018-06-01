@@ -14,7 +14,8 @@ var appState = {
   char: phraseArray,
   currentCharacter: phraseArray[0].char,
   currentIndex: 0,
-  pressedKey: null
+  pressedKey: null,
+  isGameOver: false
 }
 
 function renderCharacter (phrase) {
@@ -63,16 +64,32 @@ function renderScore (phrase) {
 renderAll(phraseArray)
 
 document.body.addEventListener('keydown', (event) => {
+  var $update = document.querySelector('.phrase')
+
+  if (appState.isGameOver) {
+    phraseArray = createPhrase(phraseString)
+    appState.char = phraseArray
+    appState.currentCharacter = phraseArray[0].char
+    appState.currentIndex = 0
+    appState.pressedKey = null
+    appState.isGameOver = false
+  }
+
   if (event.key === appState.currentCharacter) {
     appState.currentIndex++
     appState.currentCharacter = phraseArray[appState.currentIndex].char
     appState.pressedKey = null
   }
+  else if (appState.char[appState.currentIndex] === undefined) {
+    renderScore(phraseArray)
+    appState.isGameOver = true
+    return
+  }
   else {
     appState.pressedKey = event.key
   }
 
-  var $update = document.querySelector('.phrase')
+
   $update.remove()
   renderAll(phraseArray)
 })
