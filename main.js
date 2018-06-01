@@ -43,6 +43,15 @@ function renderAll(phrase) {
   document.body.appendChild($phraseAll)
 }
 
+function calculateScore(phrase) {
+  var errorCount = 0
+  for (var i = 0; i < phrase.length; i++) {
+    errorCount += phrase[i].failures
+  }
+  var totalCount = errorCount + phrase.length
+  return (phrase.length / totalCount) * 100
+}
+
 renderAll(phraseArray)
 
 document.body.addEventListener('keydown', (event) => {
